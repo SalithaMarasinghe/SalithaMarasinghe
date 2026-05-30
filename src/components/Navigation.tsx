@@ -6,16 +6,16 @@ import { cn } from '@/lib/utils'
 const navItems = [
   { id: 'about', label: 'About' },
   { id: 'skills', label: 'Skills' },
-  { id: 'work', label: 'Work' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'experience', label: 'Experience' },
   { id: 'education', label: 'Education' },
-  { id: 'writing', label: 'Writing' },
-  { id: 'speaking', label: 'Speaking' },
+  { id: 'contact', label: 'Contact' },
 ]
 
 const socialLinks = [
-  { label: 'Mail', href: 'mailto:bruce@banner.com' },
-  { label: 'Instagram', href: 'https://instagram.com' },
-  { label: 'Vimeo', href: 'https://vimeo.com' },
+  { label: 'Mail', href: 'mailto:your-email@example.com' },
+  { label: 'LinkedIn', href: 'https://linkedin.com/in/your-profile' },
+  { label: 'GitHub', href: 'https://github.com/your-username' },
 ]
 
 export function Navigation() {
