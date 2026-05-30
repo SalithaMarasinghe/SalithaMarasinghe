@@ -26,16 +26,16 @@ export function Education() {
 
         {/* Education Items */}
         <div className="space-y-16 lg:space-y-24">
-          {/* MIT */}
+          {/* Degree */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24">
             <motion.div {...fadeInUp}>
               <img
-                src="https://images.pexels.com/photos/207692/pexels-photo-207692.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="MIT Campus"
+                src="https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="University campus"
                 className="w-full h-auto grayscale"
               />
               <p className="mt-4 text-xs text-gray-500 tracking-widest uppercase">
-                MIT - CAMBRIDGE / USA
+                UNIVERSITY — SRI LANKA
               </p>
             </motion.div>
 
@@ -46,19 +46,20 @@ export function Education() {
             >
               <div>
                 <h3 className="text-xl lg:text-2xl font-light text-white mb-4">
-                  Computer Science & Visual Arts
+                  BSc in Information Technology / Data Science
                 </h3>
                 <p className="text-gray-400 leading-relaxed mb-4 text-sm lg:text-base">
-                  Started with algorithms, ended with apertures. Bruce's time at MIT 
-                  gave him a unique perspective on the intersection of technology 
-                  and visual storytelling that continues to influence his work today.
+                  Currently pursuing my undergraduate degree with a focus on data
+                  engineering and analytics. Coursework and projects span the full
+                  data lifecycle — from database design and ETL through to
+                  modelling and BI reporting.
                 </p>
-                <p className="text-sm text-gray-500">2008 — 2012</p>
+                <p className="text-sm text-gray-500">Expected graduation: 2026</p>
               </div>
             </motion.div>
           </div>
 
-          {/* Parsons */}
+          {/* Coursework */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24">
             <motion.div
               {...fadeInUp}
@@ -66,14 +67,25 @@ export function Education() {
             >
               <div>
                 <h3 className="text-xl lg:text-2xl font-light text-white mb-4">
-                  Photography & Visual Storytelling
+                  Relevant Coursework
                 </h3>
-                <p className="text-gray-400 leading-relaxed mb-4 text-sm lg:text-base">
-                  The decision to pursue photography full-time led Bruce to Parsons, 
-                  where he developed his signature style of documentary portraiture 
-                  and learned the fundamentals of visual narrative.
-                </p>
-                <p className="text-sm text-gray-500">2013 — 2015</p>
+                <ul className="space-y-2 text-sm lg:text-base text-gray-400">
+                  {[
+                    'Databases & SQL',
+                    'Data Structures & Algorithms',
+                    'Statistics & Probability',
+                    'Machine Learning',
+                    'Data Engineering & Cloud',
+                    'Business Intelligence & Visualization',
+                  ].map((c) => (
+                    <li
+                      key={c}
+                      className="pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-gray-600"
+                    >
+                      {c}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </motion.div>
 
@@ -83,26 +95,26 @@ export function Education() {
               className="lg:order-1"
             >
               <img
-                src="https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Parsons School of Design"
+                src="https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="Studying coursework"
                 className="w-full h-auto grayscale"
               />
               <p className="mt-4 text-xs text-gray-500 tracking-widest uppercase">
-                PARSONS SCHOOL OF DESIGN - NEW YORK / USA
+                CORE CURRICULUM
               </p>
             </motion.div>
           </div>
 
-          {/* ICP */}
+          {/* Certifications / Self-learning */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24">
             <motion.div {...fadeInUp}>
               <img
-                src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="International Center of Photography"
+                src="https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="Online learning"
                 className="w-full h-auto grayscale"
               />
               <p className="mt-4 text-xs text-gray-500 tracking-widest uppercase">
-                ICP - NEW YORK / USA
+                SELF-LEARNING TRACKS
               </p>
             </motion.div>
 
@@ -113,14 +125,14 @@ export function Education() {
             >
               <div>
                 <h3 className="text-xl lg:text-2xl font-light text-white mb-4">
-                  Documentary Photography Certificate
+                  Azure, Databricks & Power BI
                 </h3>
                 <p className="text-gray-400 leading-relaxed mb-4 text-sm lg:text-base">
-                  An intensive program at ICP refined Bruce's approach to long-form 
-                  documentary projects and deepened his understanding of photographic 
-                  ethics and storytelling responsibility.
+                  Ongoing self-directed learning across the Microsoft data stack —
+                  Azure Databricks, Delta Lake, Spark, and Power BI — supported by
+                  hands-on practice projects and documentation.
                 </p>
-                <p className="text-sm text-gray-500">2016</p>
+                <p className="text-sm text-gray-500">Ongoing</p>
               </div>
             </motion.div>
           </div>

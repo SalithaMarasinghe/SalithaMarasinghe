@@ -1,45 +1,60 @@
 import { motion } from 'framer-motion'
 
-const experiences = [
+const projects = [
   {
-    title: 'Senior Photographer & Creative Director',
-    company: 'National Geographic',
-    location: 'Washington D.C.',
-    period: '2020 — Present',
-    description: 'Leading visual storytelling projects across five continents. Responsible for conceptualizing and executing long-form documentary series, managing a team of 8 photographers, and establishing visual guidelines for flagship publications.',
-    skills: ['Documentary Photography', 'Team Leadership', 'Art Direction', 'Visual Storytelling', 'Project Management'],
+    title: 'ISP Customer Churn Analytics Platform',
+    subtitle: 'End-to-end churn modelling and analytics for an ISP dataset.',
+    bullets: [
+      'Built data pipelines and feature engineering in Azure Databricks using Python and Spark.',
+      'Trained a logistic regression model to predict churn and wrote scores to Delta tables.',
+      'Designed a Power BI dashboard showing churn probability, customer filters, and network KPIs.',
+    ],
+    tags: ['Azure Databricks', 'PySpark', 'Delta Lake', 'Power BI', 'scikit-learn'],
+    links: [
+      { label: 'View Code', href: '#' },
+      { label: 'View Dashboard', href: '#' },
+    ],
   },
   {
-    title: 'Staff Photographer',
-    company: 'The New York Times',
-    location: 'New York, NY',
-    period: '2018 — 2020',
-    description: 'Covered breaking news, features, and editorial assignments for print and digital platforms. Specialized in portrait photography and human interest stories. Work featured on front page 47 times.',
-    skills: ['Editorial Photography', 'Breaking News', 'Portrait Photography', 'Deadline Management', 'Photo Editing'],
+    title: 'Hospital Admissions Analytics Platform',
+    subtitle: 'Analyzing hospital admissions, patient flows, and capacity.',
+    bullets: [
+      'Modelled admissions data and created star-schema tables for reporting.',
+      'Built visualizations for occupancy, length of stay, and admission trends.',
+      'Highlighted bottlenecks and patterns to support operational decisions.',
+    ],
+    tags: ['SQL', 'Data Modelling', 'Power BI'],
+    links: [
+      { label: 'View Code', href: '#' },
+      { label: 'View Dashboard', href: '#' },
+    ],
   },
   {
-    title: 'Creative Director',
-    company: 'Time Magazine',
-    location: 'New York, NY',
-    period: '2016 — 2018',
-    description: 'Oversaw visual direction for special issues and cover stories. Collaborated with editors to develop compelling visual narratives. Managed relationships with contributing photographers worldwide.',
-    skills: ['Creative Direction', 'Visual Strategy', 'Team Coordination', 'Brand Identity', 'Magazine Publishing'],
+    title: 'Network Performance & Teleco-Network Analytics',
+    subtitle: 'Exploring network KPIs and their impact on service quality.',
+    bullets: [
+      'Analyzed latency, bandwidth, outages, and SLA breach metrics.',
+      'Created visual dashboards to compare network performance across regions.',
+      'Connected performance indicators with potential customer experience issues.',
+    ],
+    tags: ['Python', 'SQL', 'Power BI'],
+    links: [
+      { label: 'View Code', href: '#' },
+      { label: 'View Dashboard', href: '#' },
+    ],
   },
   {
-    title: 'Staff Photographer',
-    company: 'VII Photo Agency',
-    location: 'Berlin, Germany',
-    period: '2014 — 2016',
-    description: 'Worked on long-term documentary projects focusing on social issues and human rights. Assignments included coverage in conflict zones and humanitarian crises across Europe and Middle East.',
-    skills: ['Documentary', 'Conflict Photography', 'Humanitarian Coverage', 'Long-form Projects', 'Risk Assessment'],
-  },
-  {
-    title: 'Junior Photographer',
-    company: 'Magnum Photos',
-    location: 'London, UK',
-    period: '2012 — 2014',
-    description: 'Assisted senior photographers on international assignments. Developed technical skills in both digital and analog photography. First solo exhibition at the agency gallery in 2013.',
-    skills: ['Analog Photography', 'Digital Processing', 'Studio Lighting', 'Archive Management', 'Exhibition Curation'],
+    title: 'Data Engineering Experiments & Learning',
+    subtitle: 'Collection of mini projects in data engineering.',
+    bullets: [
+      'Implemented small ETL / ELT pipelines using SQL and Python.',
+      'Experimented with data quality checks and basic scheduling concepts.',
+      'Documented learnings in notebooks for future reference.',
+    ],
+    tags: ['Python', 'SQL', 'ETL', 'Notebooks'],
+    links: [
+      { label: 'View Code', href: '#' },
+    ],
   },
 ]
 
@@ -52,11 +67,11 @@ const fadeInUp = {
 
 export function Work() {
   return (
-    <section id="work" className="section-padding">
+    <section id="projects" className="section-padding">
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
         <motion.div {...fadeInUp} className="mb-16">
-          <span className="text-sm text-gray-500 tracking-widest uppercase">Career</span>
+          <span className="text-sm text-gray-500 tracking-widest uppercase">Selected Work</span>
           <div className="w-6 h-px bg-gray-600 mt-2" />
         </motion.div>
 
@@ -64,14 +79,14 @@ export function Work() {
           {...fadeInUp}
           className="font-display text-[10vw] lg:text-section leading-none tracking-tight mb-16 lg:mb-24"
         >
-          WORK<br />EXPERIENCE
+          PROJECTS
         </motion.h2>
 
-        {/* Experiences */}
+        {/* Projects */}
         <div className="space-y-0">
-          {experiences.map((exp, index) => (
+          {projects.map((project, index) => (
             <motion.article
-              key={exp.company + exp.period}
+              key={project.title}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
@@ -79,38 +94,50 @@ export function Work() {
               className="border-t border-gray-800 py-8 md:py-12 lg:py-16 group"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
-                {/* Left Column - Title & Company */}
+                {/* Left Column - Title & Subtitle */}
                 <div className="lg:col-span-5">
                   <h3 className="text-xl md:text-2xl lg:text-3xl font-light text-white mb-2">
-                    {exp.title}
+                    {project.title}
                   </h3>
-                  <p className="text-base lg:text-lg text-gray-400">
-                    {exp.company}
-                  </p>
-                  <p className="text-sm text-gray-600 mt-2">
-                    {exp.location}
+                  <p className="text-base lg:text-lg text-gray-400 leading-relaxed">
+                    {project.subtitle}
                   </p>
                 </div>
 
-                {/* Middle Column - Period */}
+                {/* Middle Column - Links */}
                 <div className="lg:col-span-2">
-                  <p className="text-sm text-gray-500 tracking-widest uppercase">
-                    {exp.period}
-                  </p>
+                  <div className="flex flex-col gap-2">
+                    {project.links.map((link) => (
+                      <a
+                        key={link.label}
+                        href={link.href}
+                        className="text-sm text-gray-400 hover:text-white tracking-widest uppercase transition-colors"
+                      >
+                        {link.label} ↗
+                      </a>
+                    ))}
+                  </div>
                 </div>
 
-                {/* Right Column - Description & Skills */}
+                {/* Right Column - Bullets & Tags */}
                 <div className="lg:col-span-5">
-                  <p className="text-gray-400 leading-relaxed mb-6 text-sm lg:text-base">
-                    {exp.description}
-                  </p>
+                  <ul className="space-y-3 mb-6">
+                    {project.bullets.map((b) => (
+                      <li
+                        key={b}
+                        className="text-gray-400 leading-relaxed text-sm lg:text-base pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-gray-600"
+                      >
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
                   <div className="flex flex-wrap gap-2">
-                    {exp.skills.map((skill) => (
+                    {project.tags.map((tag) => (
                       <span
-                        key={skill}
+                        key={tag}
                         className="px-3 py-1 text-xs text-gray-500 border border-gray-800 rounded-full"
                       >
-                        {skill}
+                        {tag}
                       </span>
                     ))}
                   </div>
