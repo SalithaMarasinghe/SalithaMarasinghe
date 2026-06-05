@@ -177,8 +177,8 @@ export function CVModal({ isOpen, onClose }: CVModalProps) {
                 </div>
               </div>
 
-              {/* PDF Preview */}
-              <div className="flex-1 min-h-0 bg-black/20 relative overflow-hidden">
+              {/* PDF Preview — Google Docs viewer on mobile (prevents horizontal overflow), native on desktop */}
+              <div className="flex-1 min-h-0 relative bg-black/20" style={{ overflow: 'clip' }}>
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={cv.id}
@@ -189,14 +189,19 @@ export function CVModal({ isOpen, onClose }: CVModalProps) {
                     className="absolute inset-0"
                   >
                     <iframe
-                      src={`${cv.file}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`}
+                      src={
+                        isMobile
+                          ? `https://docs.google.com/viewer?url=${encodeURIComponent(
+                              'https://salithamadushanmarasinghe.web.app' + cv.file
+                            )}&embedded=true`
+                          : `${cv.file}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`
+                      }
                       className="w-full h-full border-0"
                       title={`${cv.label} CV`}
                     />
                   </motion.div>
                 </AnimatePresence>
               </div>
-
 
             </div>
           </motion.div>

@@ -17,7 +17,8 @@ export function Hero() {
           <img
             src="/my-photo.webp"
             alt="Salitha Marasinghe"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover"
+            style={{ objectPosition: '75% 35%' }}
           />
           {/* Dark overlay for better text readability */}
           <div className="absolute inset-0 bg-black/60 md:bg-black/55" />
