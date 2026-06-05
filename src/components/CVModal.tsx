@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, Download, FileText } from 'lucide-react'
+import { X, Download, FileText, Share2 } from 'lucide-react'
 
 interface CVModalProps {
   isOpen: boolean
@@ -33,6 +33,38 @@ const CVOptions = [
 export function CVModal({ isOpen, onClose }: CVModalProps) {
   const [selected, setSelected] = useState(0) // 0 = DE, 1 = DS/ML
   const cv = CVOptions[selected]
+
+  // Detect mobile device
+  const isMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    typeof navigator !== 'undefined' ? navigator.userAgent : ''
+  )
+
+  // Download handler — share sheet on mobile, direct download on desktop
+  const handleDownload = useCallback(async () => {
+    if (isMobile && typeof navigator !== 'undefined' && navigator.share) {
+      try {
+        const response = await fetch(cv.file)
+        const blob = await response.blob()
+        const file = new File([blob], cv.filename, { type: 'application/pdf' })
+        await navigator.share({
+          title: cv.label + ' CV',
+          files: [file],
+        })
+      } catch (err) {
+        // User cancelled or share failed — silently ignore
+        console.warn('Share cancelled or failed:', err)
+      }
+    } else {
+      // Desktop: trigger a programmatic anchor download
+      const a = document.createElement('a')
+      a.href = cv.file
+      a.download = cv.filename
+      a.rel = 'noopener noreferrer'
+      document.body.appendChild(a)
+      a.click()
+      document.body.removeChild(a)
+    }
+  }, [cv, isMobile])
 
   // Close on Escape key
   useEffect(() => {
@@ -121,15 +153,20 @@ export function CVModal({ isOpen, onClose }: CVModalProps) {
 
                   {/* Download + Close */}
                   <div className="flex items-center gap-2 flex-shrink-0 ml-auto">
-                    <a
-                      href={cv.file}
-                      download={cv.filename}
+                    <button
+                      onClick={handleDownload}
                       className={`inline-flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-full text-xs font-medium tracking-widest uppercase text-white bg-gradient-to-r ${cv.color} hover:opacity-90 active:scale-95 transition-all`}
                     >
-                      <Download className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
-                      <span className="hidden sm:inline">Download {cv.shortLabel} CV</span>
-                      <span className="sm:hidden">Save</span>
-                    </a>
+                      {isMobile ? (
+                        <Share2 className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                      ) : (
+                        <Download className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                      )}
+                      <span className="hidden sm:inline">
+                        {isMobile ? `Share ${cv.shortLabel} CV` : `Download ${cv.shortLabel} CV`}
+                      </span>
+                      <span className="sm:hidden">{isMobile ? 'Share' : 'Save'}</span>
+                    </button>
                     <button
                       onClick={onClose}
                       className="p-2 rounded-full border border-white/20 text-white/60 hover:text-white hover:bg-white/10 active:scale-90 transition-all"
