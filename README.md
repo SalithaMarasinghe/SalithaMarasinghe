@@ -1,73 +1,110 @@
-# Welcome to your Lovable project
+# Hi, I'm Salitha Marasinghe
 
-## Project info
+Final-year Data Science undergraduate at **SLIIT** with hands-on industry experience as a **Data Engineer at TRACE**, building production-ready systems across cloud data engineering, machine learning, analytics, and AI-powered software.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+I enjoy designing systems that move from raw data to real decisions; whether that means building a lakehouse on Azure and Databricks, training and operationalizing ML models, or delivering full-stack applications powered by modern LLM workflows.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## What I Work On
 
-**Use Lovable**
+My work sits at the intersection of four closely connected areas:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+### Data Engineering
 
-Changes made via Lovable will be committed automatically to this repo.
+I design and orchestrate end-to-end cloud data pipelines using **Azure**, **Microsoft Fabric**, and **Databricks**. My work includes implementing **Medallion Architecture**, building **Delta Lakehouse** platforms, and moving data through **Azure Data Factory**, **PySpark**, and SQL-driven transformation layers into analytics-ready models.
 
-**Use your preferred IDE**
+I also work comfortably with traditional data warehousing patterns, including:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Snowflake schema design
+- SSIS ETL pipelines
+- SQL Server-based warehouse development
+- SSAS multidimensional OLAP cubes
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Machine Learning & Data Science
 
-Follow these steps:
+I build machine learning systems that go beyond experimentation and fit into broader data platforms.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+My experience includes:
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- **Churn prediction** using Logistic Regression, Random Forest, Gradient Boosting, and SVM
+- **Time-series forecasting** using SARIMA, Prophet, LSTM, SVR and Transformer-based approaches
+- **Recommendation systems** using collaborative, content-based, and hybrid filtering
+- **End to End IoT Systems** Using IoT Hardware, Cloud Integration, Machine Learning and Big Data Analytics
 
-# Step 3: Install the necessary dependencies.
-npm i
+I focus on integrating model outputs back into production pipelines, APIs, dashboards, and lakehouse environments rather than treating modelling as an isolated step.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+### Analytics & Business Intelligence
 
-**Edit a file directly in GitHub**
+I build reporting layers that make technical work useful to decision-makers.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+This includes:
 
-**Use GitHub Codespaces**
+- Interactive **Power BI** dashboards
+- Live warehouse connectivity
+- DAX-based KPIs
+- Drill-through reports and slicers
+- Analytical reporting across domains such as ISP customer health, network performance, sales, road safety, cricket, and retail analytics
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+I also work with **Excel automation**, **VBA-based reporting**, and Python-based exploratory analysis using **Pandas**, **Matplotlib**, and related analytics tooling.
 
-## What technologies are used for this project?
+### Software Engineering & AI Applications
 
-This project is built with:
+I build the applications and services that connect data, models, and users.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+My software engineering work includes:
 
-## How can I deploy this project?
+- **FastAPI** backends
+- **React** frontends
+- Real-time IoT ingestion systems
+- **Firebase**-backed application layers
+- Conversational AI systems using **Google Gemini**, **LangChain**, **ChromaDB**, RAG pipelines, and **Groq** agents
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Across projects, I apply practical engineering discipline through **Git-based workflows**, code reviews, modular design, and CI-oriented development practices.
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## Flagship Project
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Sri Lanka Tourism Intelligence Platform
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+My flagship project is the **Sri Lanka Tourism Intelligence Platform** — a fully deployed research and decision-support system that brings together data engineering, forecasting, AI agents, and product delivery in one platform.
+
+It combines:
+
+- 15 years of tourism data
+- Hybrid Ensemble (SVR + Tsformer) Arrival Forecasting
+- Revenue Forecasting
+- Source Market Intelligence
+- Review Intelligence
+- Automated weekly LLM-powered geopolitical intelligence agents
+- A RAG + LLM Based AI strategic assistant
+- An interactive Full Stack Dashboard Web Application with **Fast API** Backend and **React** Frontend
+- End-to-end deployment on **Railway** and **Firebase**
+
+This project reflects the kind of work I enjoy most: transforming complex, multi-source data into systems that help people make better decisions.
+
+---
+
+## Core Technologies
+
+**Data Engineering:**  
+Azure Data Factory, Databricks, PySpark, Delta Lake, Microsoft Fabric, SQL Server, SSIS, SSAS
+
+**Machine Learning & Data Science:**  
+Scikit-learn, TensorFlow, Keras, Prophet, SARIMA, LSTM, Transformers, SVR
+
+**Analytics & BI:**  
+Power BI, DAX, Excel, VBA, Pandas, Matplotlib
+
+**Software & AI:**  
+Python, FastAPI, React, Firebase, Docker, AI integration, Spring Boot, Java, MERN Stack                                                           
+  
+**Workflow & Delivery:**  
+Git, GitHub, Agile, CI-oriented development
+
+---
+
+## What Drives Me
+
+I’m most motivated at designing and building end to end systems systems that connect **engineering depth** with **real business value**.
