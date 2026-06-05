@@ -2,33 +2,15 @@ import { motion } from 'framer-motion'
 
 const experiences = [
   {
-    title: 'Data Engineering Intern (Academic Project)',
-    org: 'University Capstone',
-    period: '2024',
+    title: 'Data Engineer Intern',
+    org: 'TRACE – Sri Lanka | Remote',
+    period: 'Aug 2025 – Feb 2026',
     bullets: [
-      'Built ETL pipelines in Azure Databricks ingesting raw CSV and API data into Delta Lake.',
-      'Modelled curated tables and exposed them to Power BI for stakeholder reporting.',
-      'Collaborated with a small team using Git and GitHub for version control.',
-    ],
-  },
-  {
-    title: 'Analytics & Reporting (Personal Project)',
-    org: 'Self-directed',
-    period: '2023 — 2024',
-    bullets: [
-      'Designed Power BI dashboards for churn, admissions, and network KPI use cases.',
-      'Wrote performance-oriented SQL queries against star-schema models.',
-      'Documented insights and recommendations for non-technical readers.',
-    ],
-  },
-  {
-    title: 'Machine Learning Coursework',
-    org: 'Academic Project',
-    period: '2023',
-    bullets: [
-      'Implemented classification and regression models using scikit-learn.',
-      'Evaluated models with cross-validation and standard metrics.',
-      'Presented findings and trade-offs to peers and lecturers.',
+      'Built an automated Python ETL pipeline (Customs Data Transformer) to ingest, validate, and transform Excel manifests into standards-compliant XML, eliminating a manual enterprise data submission process.',
+      'Designed ER schemas and implemented the backend for a multi-source B2B pricing platform (Wasi Lanka) and conducted market research on feasibility to support strategic decision making.',
+      'Architected an LLM-powered AI data agent (Tourism AI Agent) with MCP-agent design and consent-based behavioral data collection pipelines.',
+      'Adhered to DevOps principles by enforcing Git/BitBucket version control, rigorous code review standards, and continuous integration workflows across codebases.',
+      'Acted as team lead within a cross-functional Agile delivery environment, managing full-lifecycle sprint deliverables from development and QA through to deployment, while translating complex data pipeline architectures into clear outputs for non-technical business stakeholders.',
     ],
   },
 ]
@@ -36,7 +18,7 @@ const experiences = [
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: '-100px' },
+  viewport: { once: true, margin: '-50px' },
   transition: { duration: 0.8, ease: 'easeOut' }
 }
 

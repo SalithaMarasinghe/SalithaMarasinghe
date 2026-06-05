@@ -30,7 +30,7 @@ const fadeInUp = {
 
 export function Speaking() {
   return (
-    <section id="testimonials" className="section-padding bg-[#0d0d0d]">
+    <section id="testimonials" className="section-padding bg-black">
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
         <motion.div {...fadeInUp} className="mb-16">

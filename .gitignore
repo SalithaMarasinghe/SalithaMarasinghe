@@ -22,3 +22,15 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Project-specific ignores
+.env
+.firebase/
+.agents/
+skills-lock.json
+
+# Original heavy images (optimized webp versions are used instead)
+public/My Photo.png
+public/about.png
+public/sliit.jpg
+public/hero-image.jpg

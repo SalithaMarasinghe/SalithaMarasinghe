@@ -3,13 +3,13 @@ import { motion } from 'framer-motion'
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: '-100px' },
+  viewport: { once: true, margin: '-50px' },
   transition: { duration: 0.8, ease: 'easeOut' }
 }
 
 export function Education() {
   return (
-    <section id="education" className="section-padding bg-[#0d0d0d]">
+    <section id="education" className="section-padding bg-black">
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
         <motion.div {...fadeInUp} className="mb-16">
@@ -30,12 +30,12 @@ export function Education() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24">
             <motion.div {...fadeInUp}>
               <img
-                src="https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="University campus"
-                className="w-full h-auto grayscale"
+                src="/sliit.webp"
+                alt="SLIIT Campus"
+                className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-500"
               />
               <p className="mt-4 text-xs text-gray-500 tracking-widest uppercase">
-                UNIVERSITY — SRI LANKA
+                SLIIT — SRI LANKA
               </p>
             </motion.div>
 
@@ -45,94 +45,30 @@ export function Education() {
               className="flex items-center"
             >
               <div>
-                <h3 className="text-xl lg:text-2xl font-light text-white mb-4">
-                  BSc in Information Technology / Data Science
+                <h3 className="text-xl lg:text-2xl font-light text-white mb-2">
+                  BSc (Hons) Information Technology – Specializing in Data Science (Undergraduate)
                 </h3>
-                <p className="text-gray-400 leading-relaxed mb-4 text-sm lg:text-base">
-                  Currently pursuing my undergraduate degree with a focus on data
-                  engineering and analytics. Coursework and projects span the full
-                  data lifecycle — from database design and ETL through to
-                  modelling and BI reporting.
+                <p className="text-sm text-gray-400 tracking-wider uppercase mb-6">
+                  Sri Lanka Institute of Information Technology (SLIIT) | 2022 – Present
                 </p>
-                <p className="text-sm text-gray-500">Expected graduation: 2026</p>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Coursework */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24">
-            <motion.div
-              {...fadeInUp}
-              className="flex items-center lg:order-2"
-            >
-              <div>
-                <h3 className="text-xl lg:text-2xl font-light text-white mb-4">
-                  Relevant Coursework
-                </h3>
-                <ul className="space-y-2 text-sm lg:text-base text-gray-400">
-                  {[
-                    'Databases & SQL',
-                    'Data Structures & Algorithms',
-                    'Statistics & Probability',
-                    'Machine Learning',
-                    'Data Engineering & Cloud',
-                    'Business Intelligence & Visualization',
-                  ].map((c) => (
-                    <li
-                      key={c}
-                      className="pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-gray-600"
-                    >
-                      {c}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
-
-            <motion.div
-              {...fadeInUp}
-              transition={{ ...fadeInUp.transition, delay: 0.2 }}
-              className="lg:order-1"
-            >
-              <img
-                src="https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Studying coursework"
-                className="w-full h-auto grayscale"
-              />
-              <p className="mt-4 text-xs text-gray-500 tracking-widest uppercase">
-                CORE CURRICULUM
-              </p>
-            </motion.div>
-          </div>
-
-          {/* Certifications / Self-learning */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24">
-            <motion.div {...fadeInUp}>
-              <img
-                src="https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Online learning"
-                className="w-full h-auto grayscale"
-              />
-              <p className="mt-4 text-xs text-gray-500 tracking-widest uppercase">
-                SELF-LEARNING TRACKS
-              </p>
-            </motion.div>
-
-            <motion.div
-              {...fadeInUp}
-              transition={{ ...fadeInUp.transition, delay: 0.2 }}
-              className="flex items-center"
-            >
-              <div>
-                <h3 className="text-xl lg:text-2xl font-light text-white mb-4">
-                  Azure, Databricks & Power BI
-                </h3>
-                <p className="text-gray-400 leading-relaxed mb-4 text-sm lg:text-base">
-                  Ongoing self-directed learning across the Microsoft data stack —
-                  Azure Databricks, Delta Lake, Spark, and Power BI — supported by
-                  hands-on practice projects and documentation.
-                </p>
-                <p className="text-sm text-gray-500">Ongoing</p>
+                <div className="text-gray-400 leading-relaxed text-sm lg:text-base border-t border-gray-900 pt-4 mt-4">
+                  <p className="font-medium text-white mb-3 text-xs tracking-wider uppercase">Relevant Coursework:</p>
+                  <ul className="space-y-2">
+                    {[
+                      'Data Warehousing and Business Intelligence (DWBI)',
+                      'Machine Learning and Optimization Methods (MLOM)',
+                      'Theory and Practices in Statistical Modelling (TPSM)',
+                      'Introduction to Internet of Things and Big Data Analytics (IoTBDA)'
+                    ].map((course) => (
+                      <li
+                        key={course}
+                        className="pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-gray-600 text-sm"
+                      >
+                        {course}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </motion.div>
           </div>

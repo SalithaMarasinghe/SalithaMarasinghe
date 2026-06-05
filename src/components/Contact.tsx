@@ -1,20 +1,25 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-
-const contacts = [
-  { label: 'KURUNEGALA, SRI LANKA', type: 'location', link: '#' },
-  { label: 'AVAILABLE FOR REMOTE / INTERNSHIPS', type: 'location', link: '#' },
-]
+import { Linkedin, Github, Mail, Check } from 'lucide-react'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: '-100px' },
+  viewport: { once: true, margin: '-50px' },
   transition: { duration: 0.8, ease: 'easeOut' }
 }
 
 export function Contact() {
+  const [copiedEmail, setCopiedEmail] = useState(false)
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText('marasinghe3u@gmail.com')
+    setCopiedEmail(true)
+    setTimeout(() => setCopiedEmail(false), 2000)
+  }
+
   return (
-    <section id="contact" className="section-padding">
+    <section id="contact" className="section-padding bg-black">
       <div className="max-w-7xl mx-auto">
         {/* Section Label */}
         <motion.div {...fadeInUp} className="mb-16">
@@ -38,7 +43,7 @@ export function Contact() {
           className="w-full h-px bg-gray-700 mb-12 lg:mb-16"
         />
 
-        {/* Informal Text */}
+        {/* Informal Text & Buttons */}
         <motion.div
           {...fadeInUp}
           className="mb-12 lg:mb-16 max-w-2xl"
@@ -48,65 +53,44 @@ export function Contact() {
             JUNIOR DATA ROLES, AND<br />
             COLLABORATION OPPORTUNITIES
           </h3>
-          <p className="text-sm text-gray-500 tracking-widest uppercase">
+          <p className="text-sm text-gray-500 tracking-widest uppercase mb-8">
             LET'S BUILD SOMETHING WITH DATA — REACH OUT ANY TIME
           </p>
-        </motion.div>
 
-        {/* Contact Links */}
-        <div className="space-y-0 max-w-2xl">
-          {contacts.map((contact, index) => (
+          <div className="flex flex-wrap gap-4">
+            <motion.button
+              onClick={handleCopyEmail}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-5 py-3 rounded-full text-xs font-medium uppercase tracking-widest text-white border border-white/20 bg-[#121212] hover:bg-white hover:text-black hover:border-white transition-colors duration-300 inline-flex items-center gap-2 cursor-pointer"
+            >
+              {copiedEmail ? <Check className="w-4 h-4 text-green-400" /> : <Mail className="w-4 h-4" />}
+              <span>{copiedEmail ? 'Copied!' : 'Copy Email'}</span>
+            </motion.button>
+
             <motion.a
-              key={contact.label}
-              href={contact.link}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="flex items-center justify-between border-t border-gray-800 py-5 md:py-6 group hover:bg-gray-900/30 transition-colors px-4 -mx-4"
+              href="https://www.linkedin.com/in/salitha-marasinghe"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-5 py-3 rounded-full text-xs font-medium uppercase tracking-widest text-white border border-white/20 bg-[#121212] hover:bg-white hover:text-black hover:border-white transition-colors duration-300 inline-flex items-center gap-2"
             >
-              <span className="text-sm text-gray-400 tracking-widest">
-                {contact.label}
-              </span>
-              <span className="text-gray-500 group-hover:text-white transition-colors">
-                ↗
-              </span>
+              <Linkedin className="w-4 h-4" />
+              <span>LinkedIn</span>
             </motion.a>
-          ))}
-          <div className="border-t border-gray-800" />
-        </div>
 
-        {/* Direct Contact */}
-        <motion.div
-          {...fadeInUp}
-          className="mt-16 lg:mt-24 pt-12 lg:pt-16 border-t border-gray-800"
-        >
-          <p className="text-sm text-gray-500 mb-6 lg:mb-8 tracking-widest uppercase">
-            Or reach me directly
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 md:gap-16">
-            <a
-              href="mailto:your-email@example.com"
-              className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4"
-            >
-              your-email@example.com
-            </a>
-            <a
-              href="https://linkedin.com/in/your-profile"
+            <motion.a
+              href="https://github.com/SalithaMarasinghe"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-5 py-3 rounded-full text-xs font-medium uppercase tracking-widest text-white border border-white/20 bg-[#121212] hover:bg-white hover:text-black hover:border-white transition-colors duration-300 inline-flex items-center gap-2"
             >
-              LinkedIn
-            </a>
-            <a
-              href="https://github.com/your-username"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4"
-            >
-              GitHub
-            </a>
+              <Github className="w-4 h-4" />
+              <span>GitHub</span>
+            </motion.a>
           </div>
         </motion.div>
 
@@ -117,9 +101,6 @@ export function Contact() {
         >
           <p className="text-xs text-gray-600">
             © {new Date().getFullYear()} Salitha Marasinghe. All rights reserved.
-          </p>
-          <p className="text-xs text-gray-600">
-            Kurunegala, Sri Lanka
           </p>
         </motion.footer>
       </div>
