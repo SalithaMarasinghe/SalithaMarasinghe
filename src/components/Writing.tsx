@@ -13,6 +13,17 @@ const experiences = [
       'Acted as team lead within a cross-functional Agile delivery environment, managing full-lifecycle sprint deliverables from development and QA through to deployment, while translating complex data pipeline architectures into clear outputs for non-technical business stakeholders.',
     ],
   },
+  {
+    title: 'Freelance Software Engineer (Part-Time)',
+    org: 'Emec Holdings (Pvt) Ltd',
+    period: 'Oct 2025 – Present',
+    bullets: [
+      'Designed and built the official villa booking website as a React + TypeScript SPA with Firebase backend and Firestore for real‑time availability.',
+      'Implemented guest‑facing booking forms, live availability calendar, and a protected admin dashboard for managing reservations and monitoring site performance.',
+      'Engineered a custom analytics solution to track KPIs (conversion rates, traffic sources, user intent), visualizing data through an optimized, mobile-responsive dashboard.',
+      'Deployed as a PWA on Firebase Hosting, ensuring a seamless UX across devices and offline‑ready capabilities.',
+    ],
+  },
 ]
 
 const fadeInUp = {
@@ -69,7 +80,7 @@ export function Writing() {
                     ))}
                   </ul>
                 </div>
-                <span className="text-sm text-gray-600 tracking-widest uppercase whitespace-nowrap">
+                <span className="text-sm text-white/90 tracking-widest uppercase whitespace-nowrap">
                   {item.period}
                 </span>
               </div>

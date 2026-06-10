@@ -48,8 +48,9 @@ export function Education() {
                 <h3 className="text-xl lg:text-2xl font-light text-white mb-2">
                   BSc (Hons) Information Technology – Specializing in Data Science (Undergraduate)
                 </h3>
-                <p className="text-sm text-gray-400 tracking-wider uppercase mb-6">
-                  Sri Lanka Institute of Information Technology (SLIIT) | 2022 – Present
+                <p className="text-sm tracking-wider uppercase mb-6 flex flex-col gap-1.5">
+                  <span className="text-gray-400">Sri Lanka Institute of Information Technology (SLIIT)</span>
+                  <span className="text-white/90">2022 – Present</span>
                 </p>
                 <div className="text-gray-400 leading-relaxed text-sm lg:text-base border-t border-gray-900 pt-4 mt-4">
                   <p className="font-medium text-white mb-3 text-xs tracking-wider uppercase">Relevant Coursework:</p>
